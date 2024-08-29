@@ -1,0 +1,34 @@
+import java.util.*;
+class BinarySearchAlgo 
+{
+	static Scanner sc=new Scanner(System.in);
+	public static void main(String[] args) 
+	{
+		int[] arr={10,20,30,40,50,60,70,80,90};
+		String result="Not Prasent";
+		int l=0;
+		int h=arr.length-1;
+		int mid=(l+h)/2;
+       System.out.print("Enter Key Element:");
+	   int key=sc.nextInt();
+	   
+		while (l<=h)
+		{
+			if (arr[mid]==key)
+			{
+				result="present";
+				break;
+			}
+			else if (key<arr[mid])
+			{
+				h=mid-1;
+			}
+			else if (key>arr[mid])
+			{
+				l=mid+1;
+			}
+			mid=(l+h)/2;
+		}
+		System.out.println(key+" Element is "+result);
+	}
+}
